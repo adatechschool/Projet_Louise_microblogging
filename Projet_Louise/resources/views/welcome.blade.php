@@ -20,8 +20,8 @@
 </head>
 
 <body class="antialiased">
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-        @if (Route::has('login'))
+    <div class="">
+        <!-- @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             <img src="{{ asset('img/cat.png') }}" alt="a cute kitten">
             @auth
@@ -33,11 +33,14 @@
             @endif
             @endauth
         </div>
-        @endif
-
-        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-            <h1>Bienvenue sur Projet Louise, un blog où vous pourrez poster toutes vos photos de bébés préférées ! (Animals accepted !)</h1>
-        </div>
+        @endif -->
+        <x-app-layout>
+            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-normal leading-normal mt-0 mb-2 text-black-800">
+                    Bienvenue sur Projet Louise, un blog où vous pourrez poster toutes vos photos de bébés préférées ! (Animals accepted !)
+                </h1>
+            </div>
+        </x-app-layout>
     </div>
 </body>
 
