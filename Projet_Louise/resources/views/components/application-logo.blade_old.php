@@ -1,0 +1,1 @@
+<img src="{{ asset('img/cat.png') }}" alt="a cute kitten">
