@@ -25,8 +25,7 @@ class PostFactory extends Factory
             //create a fake sentence with 5 sentences
             'content' => $this->faker->sentences(5, true),
             //create a fake sentence with 5 sentences
-            'image' => 'https://via.placeholder.com/1000
-            '
+            'image' => 'https://via.placeholder.com/1000'
         ];
     }
 }

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Post extends Model
 {
@@ -16,7 +17,7 @@ class Post extends Model
     {
         parent::boot();
         self::creating(function ($post) {
-            $post->user()->associate(auth()->user()->id);
+            $post->author()->associate(auth()->user()->id);
             $post->category()->associate(request()->category);
         });
 
@@ -25,19 +26,20 @@ class Post extends Model
         });
     }
 
-    public function user()
+    public function author()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
+
     public function getTitleATtribute($attribute)
     {
         return Str::title($attribute);
     }
-
     // protected $fillable = [
     //     'description',
     //     'img_url',

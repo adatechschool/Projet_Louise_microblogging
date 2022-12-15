@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Ici, vous trouverez tous les posts du blog') }}
+            Ici, vous trouverez tous les posts de {{$posts[0]->category->name}} !
         </h2>
     </x-slot>
 

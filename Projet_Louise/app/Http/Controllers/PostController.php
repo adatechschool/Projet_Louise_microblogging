@@ -6,6 +6,7 @@ use App\Http\Requests\StorePostRequest;
 use Illuminate\Support\Facades\Gate;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -18,9 +19,28 @@ class PostController extends Controller
     public function index()
     {
         // to optimize the requesting in the index.blade.php : we get the attribute category from the table categories thanks to the relation between table  and categories. We embed the attribute with our posts
-        $posts = Post::with('category', 'user')->latest()->get();
+        $posts = Post::with('category', 'author')->latest()->get();
         //we get all posts to display them
         return view('post.index', compact('posts'));
+    }
+
+    public function indexByAuthor(User $author)
+    {
+        return view(
+            'post.indexByAuthor',
+            [
+                'posts' => $author->posts
+            ]
+        );
+    }
+    public function indexByCategory(Category $category)
+    {
+        return view(
+            'post.indexByCategory',
+            [
+                'posts' => $category->posts
+            ]
+        );
     }
 
     /**

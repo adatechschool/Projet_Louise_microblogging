@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
         <div class="my-5">
             @foreach ($errors->all() as $error)
